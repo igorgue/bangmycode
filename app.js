@@ -1,7 +1,12 @@
-require.paths.unshift(__dirname, '/lib');
+require.paths.unshift(__dirname + '/lib');
 require.paths.unshift(__dirname);
 
-var app = require('express').createServer();
+var express = require('express');
+var app = express.createServer();
+var db = require('codeDatabase');
+
+// Middleware
+app.use(express.bodyParser());
 
 // Routes
 require('./routes/index')(app);
