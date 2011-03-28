@@ -18,3 +18,6 @@
 
 `npm install express`
 
+## Install hashlib
+
+Follow this instructions: https://github.com/brainfucker/hashlib#readme

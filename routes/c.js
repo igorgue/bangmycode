@@ -1,6 +1,3 @@
-require.paths.unshift(__dirname + "/../lib");
-require.paths.unshift(__dirname);
-
 var db = require('codeDatabase');
 
 module.exports = function(app) {
