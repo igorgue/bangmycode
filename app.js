@@ -10,6 +10,10 @@ app.use(express.bodyParser());
 // Routes
 require('routes/index')(app);
 
+// Templates
+app.set( "view engine", "ejs" );
+app.register(".ejs", require("ejs"));
+
 // API routes
 require('routes/api/c')(app);
 require('routes/api/comment')(app);

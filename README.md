@@ -21,3 +21,7 @@
 ## Install hashlib
 
 Follow this instructions: https://github.com/brainfucker/hashlib#readme
+
+## Install ejs
+
+`npm install ejs`
