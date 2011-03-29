@@ -1,0 +1,37 @@
+<h1>Title: <%= code.title %></h1>
+<pre class="prettyprint linenums">
+<%= code.content %>
+</pre>
+<p>
+    Posted on <%= new Date(code.createdAt) %>
+</p>
+<hr>
+
+<h2>Comments</h2>
+
+<h3>Add a new comment:</h3>
+<form action="/c/<%= code.id %>/comment" method="post" accept-charset="utf-8">
+  <table border="0">
+    <tr>
+      <th>
+        <label for="content">Comment: </label>
+      </th>
+      <td>
+        <textarea name="content" value="" id="content" cols="80" rows="8"></textarea>
+      </td>
+    </tr>
+    <tr>
+      <th></th>
+      <td>
+        <input type="submit" value="Comment &rarr;">
+      </td>
+    </tr>
+  </table>
+</form>
+
+<% comments.forEach(function(comment) { %>
+<p>
+    <%= comment.content %>
+    <em><a href="/c/<%= code.id %>/comment/<%= comment.id %>">Posted on <%= new Date(comment.createdAt) %></a></em>
+</p>
+<% }) %>

@@ -1,1 +1,14 @@
-<%= text %>
+<a href="/c/new">Add new code</a>
+<hr>
+<% results.forEach(function(item) { %>
+<h3>
+    <a href="/c/<%= item.id %>"><%= item.title %></a>
+</h3>
+<pre class="prettyprint linenums">
+<%= item.content %>
+</pre>
+<p>
+    Posted on <%= new Date(item.createdAt) %>
+</p>
+<hr>
+<% }) %>

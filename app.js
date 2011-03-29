@@ -7,12 +7,14 @@ var app = express.createServer();
 // Middleware
 app.use(express.bodyParser());
 
-// Routes
-require('routes/index')(app);
-
 // Templates
 app.set( "view engine", "ejs" );
 app.register(".ejs", require("ejs"));
+
+// Routes
+require('routes/index')(app);
+require('routes/c')(app);
+require('routes/comment')(app);
 
 // API routes
 require('routes/api/c')(app);

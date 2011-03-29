@@ -9,8 +9,14 @@
         <%= "BANG! MY CODE!" %>
       <% } %>
     </title>
+
+    <!--<link href="/css/prettify.css" type="text/css" rel="stylesheet" />-->
+    <link href="/css/sunburst.css" type="text/css" rel="stylesheet" />
+    <script type="text/javascript" src="/js/prettify.js"></script>
   </head>
-  <body>
-    <%= body %>
+  <body onload="prettyPrint()">
+    <div id="content">
+      <%- body %>
+    </div>
   </body>
 </html>
